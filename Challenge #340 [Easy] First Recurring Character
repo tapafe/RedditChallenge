@@ -1,0 +1,61 @@
+import java.util.*;
+
+public class Main {
+
+    int charIndex = 0;
+    String firstRecuringCharacter = "";
+
+
+    public static void main(String[] args) {
+
+        Main Finder = new Main();
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputStr = input.next();
+
+        int IndexResult = Finder.findIndex(inputStr);
+        String CharacterResult = Finder.findChar(inputStr);
+
+        if (!Objects.equals(CharacterResult, "")) {
+            System.out.println("The first recurring character in this string is " + CharacterResult + " and it recurs at index " + IndexResult);
+
+        } else {
+            System.out.println("No characters recur in this string");
+        }
+
+    }
+
+    public int findIndex(String inputString){
+        char[] chars = inputString.toCharArray();
+
+        ArrayList<Character> characterArrayList = new ArrayList<>();
+
+        for(char c : chars){
+            characterArrayList.add(c);
+        }
+
+
+        for (char c : chars){
+            if(!Objects.equals(firstRecuringCharacter, "")){
+                break;
+            }
+
+            for (int i = characterArrayList.indexOf(c) + 1 ; i < characterArrayList.size(); i++){
+
+                String a = String.valueOf(c);
+                String b = String.valueOf(characterArrayList.get(i));
+                charIndex = i;
+
+                if(Objects.equals(a, b)){
+                    firstRecuringCharacter = b;
+                    break;
+                }
+            }
+        }return charIndex;
+    }
+
+    public String findChar(String inputString){
+        findIndex(inputString);
+        return firstRecuringCharacter;
+    }
+}
