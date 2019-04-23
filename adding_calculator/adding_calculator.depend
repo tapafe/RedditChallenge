@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1508859140 source:c:\users\tapafe\desktop\exia\prog\adding_calculator\main.c
+	<stdio.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+
+1509115745 source:c:\users\tapafe\desktop\exia\prog\reddit challenge\the adding calculator\adding_calculator\main.c
+	<stdio.h>
+	<limits.h>
+	<stdlib.h>
+	<string.h>
+
